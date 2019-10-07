@@ -8,63 +8,63 @@ namespace unit_Tests
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void IsTriangleEquilateralTest()
         {
-            Assert.AreEqual(triangle.IsTriangle(1, 2, 3), true);
+            Assert.IsTrue(Triangle.IsTriangle(4, 4, 4));
         }
 
         [TestMethod]
-        public void TestMethod2()
+        public void IsTriangleAllSidesNullTest()
         {
-            Assert.AreEqual(triangle.IsTriangle(1, 2, 3), true);
+            Assert.IsFalse(Triangle.IsTriangle(0, 0, 0));
         }
 
         [TestMethod]
-        public void TestMethod3()
+        public void IsTriangleRightTest()
         {
-            Assert.AreEqual(triangle.IsTriangle(1, 2, 3), true);
+            Assert.IsTrue(Triangle.IsTriangle(5, 8, 10));
         }
 
         [TestMethod]
-        public void TestMethod4()
+        public void IsTriangleIsoscelesTest()
         {
-            Assert.AreEqual(triangle.IsTriangle(1, -1, 1), true);
+            Assert.IsTrue(Triangle.IsTriangle(3, 3, 2));
         }
 
         [TestMethod]
-        public void TestMethod5()
+        public void IsTriangleGoodTest()
         {
-            Assert.AreEqual(triangle.IsTriangle(1, 1, 1), true);
+            Assert.IsTrue(Triangle.IsTriangle(3, 4, 5));
         }
 
         [TestMethod]
-        public void TestMethod6()
+        public void IsTriangleBadTest()
         {
-            Assert.AreEqual(triangle.IsTriangle(0, 0, 0), true);
+            Assert.IsFalse(Triangle.IsTriangle(1, 12, 6));
         }
 
         [TestMethod]
-        public void TestMethod7()
+        public void IsTriangleDoubleGoodTest()
         {
-            Assert.AreEqual(triangle.IsTriangle(-1, 0, 3), true);
+            Assert.IsTrue(Triangle.IsTriangle(1.5, 2.5, 3.5));
         }
 
         [TestMethod]
-        public void TestMethod8()
+        public void IsTriangleOneBadSideTest()
         {
-            Assert.AreEqual(triangle.IsTriangle(1, 2, 0), true);
+            Assert.IsFalse(Triangle.IsTriangle(3, 4, -5));
         }
 
         [TestMethod]
-        public void TestMethod9()
+        public void IsTriangleTwoBadSidesTest()
         {
-            Assert.AreEqual(triangle.IsTriangle(1.1, 2.2, 3.3), true);
+            Assert.IsFalse(Triangle.IsTriangle(-2, -3, 4));
         }
 
         [TestMethod]
-        public void TestMethod10()
+        public void IsTriangleThreeBadSidesTest()
         {
-            Assert.AreEqual(triangle.IsTriangle(10, 100, 10), true);
+            Assert.IsFalse(Triangle.IsTriangle(-5, -2, -3));
         }
     }
 }
