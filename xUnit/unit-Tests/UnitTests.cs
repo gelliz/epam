@@ -5,7 +5,7 @@ using xUnit;
 namespace unit_Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTests
     {
         [TestMethod]
         public void IsTriangleEquilateralTest()
