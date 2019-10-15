@@ -2,6 +2,5 @@ E:\EPAM\epam\xUnit\xUnit\bin\Debug\xUnit.exe.config
 E:\EPAM\epam\xUnit\xUnit\bin\Debug\xUnit.exe
 E:\EPAM\epam\xUnit\xUnit\bin\Debug\xUnit.pdb
 E:\EPAM\epam\xUnit\xUnit\obj\Debug\xUnit.csprojAssemblyReference.cache
-E:\EPAM\epam\xUnit\xUnit\obj\Debug\xUnit.csproj.CoreCompileInputs.cache
 E:\EPAM\epam\xUnit\xUnit\obj\Debug\xUnit.exe
 E:\EPAM\epam\xUnit\xUnit\obj\Debug\xUnit.pdb
