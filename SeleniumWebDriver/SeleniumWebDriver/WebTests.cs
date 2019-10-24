@@ -69,8 +69,8 @@ namespace SeleniumWebDriver
         [Test]
         public void RentCarWithoutEnteringPersonalData()
         {
-            var e = webDriver.FindElement(By.XPath("//div[@class = 'ibe-button-par ibe-button-par-pickup']"));
-            e.Click();
+            var uncheckDroppOffLocation = webDriver.FindElement(By.XPath("//div[@class = 'ibe-button-par ibe-button-par-pickup']"));
+            uncheckDroppOffLocation.Click();
 
             var pickUpLocationBox = webDriver.FindElement(By.XPath("//div[@id = 'sx-js-res-pu-location']/span/input"));
             pickUpLocationBox.Click();
