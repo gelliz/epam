@@ -24,11 +24,6 @@ namespace SeleniumWebDriver
         {
             webDriver.Quit();
         }
-
-        //Отмена бронирования
-        //Шаги: зайти на сайт http://www.sixt.global, залогиниться, перейти на вкладку MENU -> "Customer Service", 
-        //выбрать "Cancel", нажать кнопку "Reservation cancellation".
-        //Ожидаемый результат: пользователь отменил бронирование и увидел подтверждение.
         
         [Test]
         public void CarReservationCancellation()
@@ -60,11 +55,6 @@ namespace SeleniumWebDriver
             var confirmMessage = webDriver.FindElement(By.XPath("//div[@class = 'sx-gc-message-text']"));
             Assert.AreEqual("Your reservation has been cancelled successfully", confirmMessage.Text);
         }
-
-        //Аренда автомобиля без ввода личных данных
-        //Шаги: зайти на сайт http://www.sixt.global, заполнить поля PICK-UP LOCATION & DROP-OFF, PICK-UP TIME и DROP-OFF TIME, 
-        //выбрать автомобиль, в заявке оставить все поля пустыми, нажать кнопку "Book now".
-        //Ожидаемый результат: все поля выделяются красным и предлагаются подсказки.
         
         [Test]
         public void RentCarWithoutEnteringPersonalData()
