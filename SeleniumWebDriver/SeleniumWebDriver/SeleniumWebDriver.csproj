@@ -67,7 +67,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BrowserBaseFunction.cs" />
     <Compile Include="WebTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
