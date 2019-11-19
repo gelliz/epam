@@ -25,36 +25,36 @@ namespace SeleniumWebDriver
             webDriver.Quit();
         }
         
-        [Test]
-        public void CarReservationCancellation()
-        {
-            var loginTab = webDriver.FindElement(By.XPath("//li[@class = 't3-main-navi-item t3-main-navi-hd-login']/a"));
-            loginTab.Click();
+        //[Test]
+        //public void CarReservationCancellation()
+        //{
+        //    var loginTab = webDriver.FindElement(By.XPath("//li[@class = 't3-main-navi-item t3-main-navi-hd-login']/a"));
+        //    loginTab.Click();
 
-            var userName = webDriver.FindElement(By.XPath("//input[@name = 'UserName']"));
-            userName.SendKeys("33086490");
+        //    var userName = webDriver.FindElement(By.XPath("//input[@name = 'UserName']"));
+        //    userName.SendKeys("33086490");
 
-            var password = webDriver.FindElement(By.XPath("//input[@name = 'Password']"));
-            password.SendKeys("golubliza");
+        //    var password = webDriver.FindElement(By.XPath("//input[@name = 'Password']"));
+        //    password.SendKeys("golubliza");
 
-            var loginButton = webDriver.FindElement(By.XPath("//a[@class = 'sx-gc-button-cta sx-gc-button-cta-green modal__content__button--modifier']"));
-            loginButton.Click();
+        //    var loginButton = webDriver.FindElement(By.XPath("//a[@class = 'sx-gc-button-cta sx-gc-button-cta-green modal__content__button--modifier']"));
+        //    loginButton.Click();
 
-            var menuTab = webDriver.FindElement(By.XPath("//div[@class = 't3-main-navi-hd']"));
-            menuTab.Click();
+        //    var menuTab = webDriver.FindElement(By.XPath("//div[@class = 't3-main-navi-hd']"));
+        //    menuTab.Click();
 
-            var customerService = webDriver.FindElement(By.XPath("//div[@class = 't3-main-navi-content']/ul/li[5]/a"));
-            customerService.Click();
+        //    var customerService = webDriver.FindElement(By.XPath("//div[@class = 't3-main-navi-content']/ul/li[5]/a"));
+        //    customerService.Click();
 
-            var cancelButton = webDriver.FindElement(By.XPath("//a[@class = 'sx-gc-iconlink sx-gc-display-block sx-gc-normal-weight action-cancel']"));
-            cancelButton.Click();
+        //    var cancelButton = webDriver.FindElement(By.XPath("//a[@class = 'sx-gc-iconlink sx-gc-display-block sx-gc-normal-weight action-cancel']"));
+        //    cancelButton.Click();
 
-            var ReservationCancellationButton = webDriver.FindElement(By.XPath("//p[@class = 'sx-gc-button-normal-red sx-gc-button-normal sx-gc-button-normal-green']"));
-            ReservationCancellationButton.Click();
+        //    var ReservationCancellationButton = webDriver.FindElement(By.XPath("//p[@class = 'sx-gc-button-normal-red sx-gc-button-normal sx-gc-button-normal-green']"));
+        //    ReservationCancellationButton.Click();
 
-            var confirmMessage = webDriver.FindElement(By.XPath("//div[@class = 'sx-gc-message-text']"));
-            Assert.AreEqual("Your reservation has been cancelled successfully", confirmMessage.Text);
-        }
+        //    var confirmMessage = webDriver.FindElement(By.XPath("//div[@class = 'sx-gc-message-text']"));
+        //    Assert.AreEqual("Your reservation has been cancelled successfully", confirmMessage.Text);
+        //}
         
         [Test]
         public void RentCarWithoutEnteringPersonalData()
