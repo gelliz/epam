@@ -33,15 +33,15 @@ namespace PageObject
             StartPage startPage = new StartPage(webDriver)
                 .FillInLocationFields("Minsk National Airport")
                 .ClickGetQuoteButton()
-                .SelectYourAge();
-            Assert.AreEqual("Minimum age of driver: 21 years", startPage.errorAge.Text);
+                .SelectAgeLessThanTwentyOne();
+            Assert.AreEqual("Minimum age of driver: 21 years", startPage.errorMessageAboutForbiddenAge.Text);
         }
 
         [Test]
         public void FindCarWithDesiredCharacteristics()
         {
             StartPage startPage = new StartPage(webDriver).GoToTabFleet(webDriver);
-            FleetPage fleetPage = new FleetPage(webDriver).SelectDesireCharacteristics(webDriver);
+            FleetPage fleetPage = new FleetPage(webDriver).SelectDesireCountries().SelectCategorySuv();
             Assert.AreEqual("6", fleetPage.textAboutCategoriesReceived.Text);
         }
     }

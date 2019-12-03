@@ -14,37 +14,37 @@ namespace PageObject
         }
 
         [FindsBy(How = How.XPath, Using = "//li[@class = 't3-js-main-navi-item t3-main-navi-item t3-main-navi-hd-menu']/div[@class = 't3-main-navi-hd']/span")]
-        private IWebElement menuButton { get; set; }
+        private IWebElement menuButton;
 
         [FindsBy(How = How.XPath, Using = "//ul[@class = 't3-mainmenu']/li[3]/a[@href = '/fleet/']")]
-        private IWebElement fleetItem { get; set; }
+        private IWebElement fleetItem;
 
         [FindsBy(How = How.XPath, Using = "//div[@class = 'ibe-button-par ibe-button-par-pickup']")]
-        private IWebElement uncheckDroppOffLocation { get; set; }
+        private IWebElement uncheckDroppOffLocation;
       
         [FindsBy(How = How.XPath, Using = "//div[@id = 'sx-js-res-pu-location']/span/input")]
-        private IWebElement pickUpLocationBox { get; set; }
+        private IWebElement pickUpLocationBox;
 
         [FindsBy(How = How.XPath, Using = "//ul[@id = 'sx-js-res-pu-list']/li[1]/ul/li")]
-        private IWebElement pickUpLocation { get; set; }
+        private IWebElement pickUpLocation;
 
         [FindsBy(How = How.XPath, Using = "//div[@id = 'sx-js-res-ret-location']/span/input")]
-        private IWebElement returnLocationBox { get; set; }
+        private IWebElement returnLocationBox;
 
         [FindsBy(How = How.XPath, Using = "//ul[@id = 'sx-js-res-ret-list']/li[1]/ul/li")]
-        private IWebElement returnLocation { get; set; }
+        private IWebElement returnLocation;
 
         [FindsBy(How = How.XPath, Using = "//p[@class = 'ibe-button']")]
-        private IWebElement getQuoteButton { get; set; }
+        private IWebElement getQuoteButton;
 
-        [FindsBy(How = How.XPath, Using = "//label[@for = 'sx-res-filter-age']")]
-        public IWebElement yourAge { get; set; }
+        [FindsBy(How = How.XPath, Using = "//label[@for = 'sx-res-filter-age']/span[@class = 'sx-js-age-filter-data']")]
+        public IWebElement listAge;
 
-        [FindsBy(How = How.XPath, Using = "//ul[@class = 'offerselect__filter__dropdown__list offerselect__filter__dropdown__list--age offerselect__filter__dropdown__list--open']/li[@data-age = '20']")]
-        public IWebElement yourAgeList { get; set; }
+        [FindsBy(How = How.XPath, Using = "//ul[@class = 'offerselect__filter__dropdown__list offerselect__filter__dropdown__list--age offerselect__filter__dropdown__list--open']/li")]
+        public IWebElement selectingAge;
 
         [FindsBy(How = How.XPath, Using = "//div[@class = 'age-hint display-hint']/p")]
-        public IWebElement errorAge { get; set; }
+        public IWebElement errorMessageAboutForbiddenAge;
 
         public StartPage GoToTabFleet(IWebDriver webDriver)
         {
@@ -72,10 +72,10 @@ namespace PageObject
             return this;
         }
 
-        public StartPage SelectYourAge()
+        public StartPage SelectAgeLessThanTwentyOne()
         {
-            yourAge.Click();
-            yourAgeList.Click();
+            listAge.Click();
+            selectingAge.Click();
             return this;
         }
     }

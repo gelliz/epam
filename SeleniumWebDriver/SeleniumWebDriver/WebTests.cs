@@ -2,6 +2,8 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.UI;
 
 namespace SeleniumWebDriver
 {
@@ -14,7 +16,6 @@ namespace SeleniumWebDriver
         public void StartBrowserAndGoToTheSite()
         {
             webDriver = new ChromeDriver();
-            webDriver.Manage().Window.Maximize();
             webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
             webDriver.Navigate().GoToUrl("http://www.sixt.global");
         }
@@ -24,38 +25,41 @@ namespace SeleniumWebDriver
         {
             webDriver.Quit();
         }
-        
-        //[Test]
-        //public void CarReservationCancellation()
-        //{
-        //    var loginTab = webDriver.FindElement(By.XPath("//li[@class = 't3-main-navi-item t3-main-navi-hd-login']/a"));
-        //    loginTab.Click();
 
-        //    var userName = webDriver.FindElement(By.XPath("//input[@name = 'UserName']"));
-        //    userName.SendKeys("33086490");
+        [Test]
+        public void CarReservationCancellation()
+        {
+            var loginTab = webDriver.FindElement(By.XPath("//li[@class = 't3-main-navi-item t3-main-navi-hd-login']/a"));
+            loginTab.Click();
 
-        //    var password = webDriver.FindElement(By.XPath("//input[@name = 'Password']"));
-        //    password.SendKeys("golubliza");
+            var userName = webDriver.FindElement(By.XPath("//input[@name = 'UserName']"));
+            userName.SendKeys("33086490");
 
-        //    var loginButton = webDriver.FindElement(By.XPath("//a[@class = 'sx-gc-button-cta sx-gc-button-cta-green modal__content__button--modifier']"));
-        //    loginButton.Click();
+            var password = webDriver.FindElement(By.XPath("//input[@name = 'Password']"));
+            password.SendKeys("golubliza");
 
-        //    var menuTab = webDriver.FindElement(By.XPath("//div[@class = 't3-main-navi-hd']"));
-        //    menuTab.Click();
+            var loginButton = webDriver.FindElement(By.XPath("//a[@class = 'sx-gc-button-cta sx-gc-button-cta-green modal__content__button--modifier']"));
+            loginButton.Click();
 
-        //    var customerService = webDriver.FindElement(By.XPath("//div[@class = 't3-main-navi-content']/ul/li[5]/a"));
-        //    customerService.Click();
+            var menuTab = webDriver.FindElement(By.XPath("//li[@class = 't3-js-main-navi-item t3-main-navi-item t3-main-navi-hd-menu']/div[@class = 't3-main-navi-hd']/span"));
+            var customerService = webDriver.FindElement(By.XPath("//ul[@class = 't3-mainmenu']/li[5]/a[@href = '/mysixt/']"));
+            Actions action = new Actions(webDriver);
+            action.MoveToElement(menuTab).Click().Build().Perform();
+            new WebDriverWait(webDriver, TimeSpan.FromSeconds(10))
+                .Until(ExpectedConditions.ElementToBeClickable(customerService)).Click();
 
-        //    var cancelButton = webDriver.FindElement(By.XPath("//a[@class = 'sx-gc-iconlink sx-gc-display-block sx-gc-normal-weight action-cancel']"));
-        //    cancelButton.Click();
+            var cancelButton = webDriver.FindElement(By.XPath("//a[@class = 'sx-gc-iconlink sx-gc-display-block sx-gc-normal-weight action-cancel']"));
+            cancelButton.Click();
 
-        //    var ReservationCancellationButton = webDriver.FindElement(By.XPath("//p[@class = 'sx-gc-button-normal-red sx-gc-button-normal sx-gc-button-normal-green']"));
-        //    ReservationCancellationButton.Click();
+            var ReservationCancellationButton = webDriver.FindElement(By.XPath("//p[@class = 'sx-gc-button-normal-red sx-gc-button-normal sx-gc-button-normal-green']"));
+            ReservationCancellationButton.Click();
 
-        //    var confirmMessage = webDriver.FindElement(By.XPath("//div[@class = 'sx-gc-message-text']"));
-        //    Assert.AreEqual("Your reservation has been cancelled successfully", confirmMessage.Text);
-        //}
-        
+            var confirmMessage = webDriver.FindElement(By.XPath("//div[@class = 'sx-gc-message-text']"));
+            Assert.AreEqual("Your reservation has been cancelled successfully", confirmMessage.Text);
+            
+            TimeSpan.FromSeconds(10);
+        }
+
         [Test]
         public void RentCarWithoutEnteringPersonalData()
         {
@@ -88,6 +92,8 @@ namespace SeleniumWebDriver
 
             var errorMessage = webDriver.FindElement(By.XPath("//div[@class = 'sx-gc-error']"));
             Assert.AreEqual("Please check the red marked entries.", errorMessage.Text);
+
+            TimeSpan.FromSeconds(10);
         }
     }
 }
