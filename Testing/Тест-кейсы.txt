@@ -2,9 +2,9 @@
 Шаги: зайти на сайт http://www.sixt.global, заполнить поля PICK-UP LOCATION & DROP-OFF, PICK-UP TIME и DROP-OFF TIME, выбрать авто,нажать Pay later/now, далее нажать Accept rate and extras, в поле "Phone number" ввести некорректный телефонный номер, нажать кнопку "Book now".
 Ожидаемый результат: бронирование выполнено, переход на новую страницу.
 
-2. Аренда машины задним числом
-Шаги: зайти на сайт http://www.sixt.global, заполнить поля PICK-UP LOCATION & DROP-OFF, PICK-UP TIME и DROP-OFF TIME, в поле PICK-UP TIME выбрать прошедшею дату (01.09.2019), нажать кнопку "Get quota".
-Ожидаемый результат: пользователя оповещают о некорректном вводе даты и просят ее изменить.
+2. Аренда грузовика без указания локации
+Шаги: зайти на сайт http://www.sixt.global, нажать Rent A Truck, нажать кнопку "Get quota".
+Ожидаемый результат: пользователя просят заполнить поля локации.
 
 3. Аренда автомобиля без ввода личных данных
 Шаги: зайти на сайт http://www.sixt.global, заполнить поля PICK-UP LOCATION & DROP-OFF, PICK-UP TIME и DROP-OFF TIME, выбрать автомобиль, в заявке оставить все поля пустыми, нажать кнопку "Book now".
@@ -27,10 +27,9 @@
 Ожидаемый результат: получение сообщения о максимальном сроке аренды (180 дней) в модальном окне.
 
 8. Предоставление подтверждения аренды автомобиля (скачиваемый файл).
-Шаги: зайти на сайт http://www.sixt.global, заполнить поля PICK-UP LOCATION & DROP-OFF, PICK-UP TIME, DROP-OFF TIME,
+Шаги: зайти на сайт http://www.sixt.global, залогиниться, заполнить поля PICK-UP LOCATION & DROP-OFF, PICK-UP TIME, DROP-OFF TIME,
 нажать show offers, выбрать авто, ознакомившишь с автомобилем нажать select,
-далее continue, заполнить поля Street Address, Country Code, Mobile phone number, Country,
-если есть что-то из бонусов - Bonus Program -> Number и нажать BOOK NOW.
+далее continue, и нажать BOOK NOW.
 Ожидаемый результат: на странице с информацией о заказе появится ссылка на скачку файла в .pdf .
 
 9. Поиск автомобиля в недоступной локации

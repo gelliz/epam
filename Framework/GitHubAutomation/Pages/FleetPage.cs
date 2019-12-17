@@ -8,7 +8,7 @@ namespace GitHubAutomation.Pages
 {
     public class FleetPage
     {
-        IWebDriver driver;
+        private IWebDriver driver;
 
         public FleetPage(IWebDriver driver)
         {

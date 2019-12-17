@@ -24,14 +24,14 @@ namespace GitHubAutomation.Driver
                 {
                     case "Edge":
                         new DriverManager().SetUpDriver(new EdgeConfig());
-                        driver = new ChromeDriver();
+                        driver = new EdgeDriver();
                         break;
                     default:
                         new DriverManager().SetUpDriver(new ChromeConfig());
-                        driver = new EdgeDriver();
+                        driver = new ChromeDriver();
                         break;
                 }
-                driver.Manage().Timeouts().ImplicitWait.Add(TimeSpan.FromSeconds(30));
+                driver.Manage().Timeouts().ImplicitWait.Add(TimeSpan.FromSeconds(60));
             }
             return driver;
         }
